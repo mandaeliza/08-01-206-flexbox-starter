@@ -96,61 +96,98 @@ textarea {
    ========================================================================== */
 
 html {
-  background-color: #fff;
+  background-color: #2D4059;
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 0 2em;
-  font-size: 1.25em;
-  height: 100%;
-  color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0em;
+    font-size: 1.25em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 1200px;
 }
+
+p span {
+    font-family: 'Rock Salt', cursive;
+    color: #fff;
+  }
 
 header,
 footer {
-  background-color: #222;
+  background-color: #2D4059;
   height: 80px;
   width: 100%;
+  color: #FFD460;
   display: flex;
+  justify-content: flex-start;
+  padding: 1em;
+}
+
+header h1 {
+    font-family: 'Rock Salt', cursive;
 }
 
 main {
-  background-color: #ccc;
-  height: 250px;
+background-color: #EA5455;
+  color: #2D4059;
   width: 100%;
+  font-size: 1.25em;
   display: flex;
+  justify-content: center;
+  padding: 1.4em .6667em;
+  border-bottom: 1px solid #fff;
 }
 
-header,
-footer,
-main {
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-    justify-content: space-between;
+main p {
+    margin: 0;
 }
 
 .flex-items {
-  color: #fff;
-  line-height: 1.5em;
-  font-size: 1.6em;
-  background-color: #f16059;
-  width: 30%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5em;
+    font-size: 1em;
+    border-bottom: 1px solid #fff;
+    height: 125px;
+    padding: 1em;
 }
 
+footer {
+    border-top: 1px solid #fff;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    padding: 0 2em 0 0;
+}
+
+footer li a:link {
+    color: #FFD460;
+}
+
+footer li a:visited {
+    color: #EA5455;
+}
+/*
+font-family: 'Rock Salt', cursive;
+font-family: 'Ubuntu', sans-serif;*/
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -232,15 +269,23 @@ main {
    ========================================================================== */
 
 /* If you'd like to try a different layout on Desktop and larger screens: */
-@media (min-width: 1200px) {
-  #div-1,
-  #div-2{
-      /* set your flex value to 1 50% */
-  }
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
 
-  #div-3 {
-    /* set your flex value to 1 100% */
-  }
+@media (min-width: 1200px) {
+    .flex-items {
+      flex-basis: 30%;
+      border-bottom: none;
+    }
+
+    #div-2 p {
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+      padding: 0 40px;
+    }
 }
 
 @media print,
